@@ -1,6 +1,11 @@
 [
   {
     "contract": "0x21e025f515b5b7f9b106cc8117ee078149c2de26",
-    "operation": "tokens"
+    "operation": "transfer",
+    "args": [
+      "@steve",
+      "DVKD6DpUOISM+Ywwj2F6EfyK5Sdvvql/f7TRb11GmAc=",
+      "test"
+    ]
   }
 ]

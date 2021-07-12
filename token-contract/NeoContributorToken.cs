@@ -112,16 +112,14 @@ namespace NgdEnterprise.Samples
             var tokenData = tokenMap[tokenId];
             if (tokenData == null)
             {
-                Runtime.Log("Invalid tokenId");
-                return false;
+                throw new Exception("Invalid token data.");
             }
 
             TokenState token = (TokenState)StdLib.Deserialize(tokenData);
             UInt160 from = token.Owner;
-            if (from != UInt160.Zero && !Runtime.CheckWitness(from))
+            if (from == UInt160.Zero )
             {
-                Runtime.Log("only the token owner can transfer it");
-                return false;
+                throw new Exception("only the token owner can transfer it");
             }
 
             if (from != to)
